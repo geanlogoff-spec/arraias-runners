@@ -57,7 +57,8 @@ export function Hero() {
               priority
             />
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-4">
-              Nosso combustível é a <br className="hidden lg:block" />
+              Nosso<br />
+              combustível é a<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-neon-light">
                 <AnimatePresence mode="wait">
                   <motion.span
