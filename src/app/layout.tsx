@@ -10,13 +10,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Arraias Runners | Seu primeiro passo começa hoje",
-  description: "Grupo de corrida focado em qualidade de vida, superação e amizade. Melhore seu condicionamento cardiovascular, faça novos amigos e quebre seus recordes com a Arraias Runners.",
-  keywords: ["corrida de rua", "grupo de corrida", "treino de corrida", "corrida iniciantes", "assessoria esportiva", "corrida Acre", "Arraias Runners"],
+  title: "Arraias Runners | Grupo de Corrida em Rodrigues Alves - AC",
+  description: "Grupo de corrida de rua em Rodrigues Alves, Acre. Treinos regulares, dicas de corrida e uma comunidade unida para você superar limites. Junte-se a nós!",
+  keywords: [
+    "corrida de rua",
+    "grupo de corrida",
+    "treino de corrida",
+    "corrida iniciantes",
+    "assessoria esportiva",
+    "corrida Acre",
+    "Arraias Runners",
+    "Rodrigues Alves",
+    "Vale do Juruá"
+  ],
+  alternates: {
+    canonical: "https://arraiasrunners.com.br",
+  },
   openGraph: {
     title: "Arraias Runners",
     description: "Nosso combustível é a superação! Descubra que você é capaz de ir muito mais longe do que imagina.",
-    url: "https://arraiasrunners.com.br", // Placeholder
+    url: "https://arraiasrunners.com.br",
     siteName: "Arraias Runners",
     locale: "pt_BR",
     type: "website",
@@ -56,6 +69,28 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SportsClub",
+              "name": "Arraias Runners",
+              "description": "Grupo de corrida de rua focado em saúde, qualidade de vida e comunidade no Vale do Juruá, Rodrigues Alves, Acre.",
+              "url": "https://arraiasrunners.com.br",
+              "logo": "https://i.postimg.cc/d1MZxJZ7/logo-arraia.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Rodrigues Alves",
+                "addressRegion": "AC",
+                "addressCountry": "BR"
+              },
+              "sameAs": [
+                "https://www.instagram.com/arraiasrunners/"
+              ]
+            })
+          }}
+        />
         {children}
       </body>
     </html>

@@ -132,7 +132,7 @@ export function Hero() {
             {/* Imagem Placeholder de Alta Qualidade */}
             <Image
               src="https://i.ibb.co/wNRW73bq/Whats-App-Image-2026-05-13-at-17-10-35.jpg"
-              alt="Corredores em movimento"
+              alt="Grupo de corrida Arraias Runners treinando ao ar livre em Rodrigues Alves, Acre"
               fill
               className="object-cover"
               priority
