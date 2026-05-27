@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Quem Somos | Arraias Runners - Grupo de Corrida",
   description: "Conheça a história, missão e valores da Arraias Runners. Um grupo de corrida de rua em Rodrigues Alves, Acre, focado em saúde e comunidade.",
   alternates: {
-    canonical: "https://arraiasrunners.com.br/sobre",
+    canonical: "https://arraias-runners.vercel.app/sobre",
   },
 };
 

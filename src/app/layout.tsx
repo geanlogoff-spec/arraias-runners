@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     "Vale do Juruá"
   ],
   alternates: {
-    canonical: "https://arraiasrunners.com.br",
+    canonical: "https://arraias-runners.vercel.app",
   },
   openGraph: {
     title: "Arraias Runners",
     description: "Nosso combustível é a superação! Descubra que você é capaz de ir muito mais longe do que imagina.",
-    url: "https://arraiasrunners.com.br",
+    url: "https://arraias-runners.vercel.app",
     siteName: "Arraias Runners",
     locale: "pt_BR",
     type: "website",
@@ -77,7 +77,7 @@ export default function RootLayout({
               "@type": "SportsClub",
               "name": "Arraias Runners",
               "description": "Grupo de corrida de rua focado em saúde, qualidade de vida e comunidade no Vale do Juruá, Rodrigues Alves, Acre.",
-              "url": "https://arraiasrunners.com.br",
+              "url": "https://arraias-runners.vercel.app",
               "logo": "https://i.postimg.cc/d1MZxJZ7/logo-arraia.png",
               "address": {
                 "@type": "PostalAddress",

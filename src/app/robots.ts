@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://arraiasrunners.com.br/sitemap.xml",
+    sitemap: "https://arraias-runners.vercel.app/sitemap.xml",
   };
 }
