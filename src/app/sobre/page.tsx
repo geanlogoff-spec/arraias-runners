@@ -8,9 +8,9 @@ import { Navbar } from "@/components/Navbar";
 
 const timeline = [
   {
-    year: "2023",
+    year: "2024",
     title: "O primeiro passo",
-    description: "Tudo começou com um pequeno grupo de amigos que se reunia para caminhar no final de semana em Rodrigues Alves.",
+    description: "Tudo começou com um pequeno grupo de amigos que se reuniu para uma corrida no final de semana em Rodrigues Alves.",
     icon: Footprints,
   },
   {
@@ -132,7 +132,7 @@ export default function SobrePage() {
               {[
                 { number: "+100", label: "Corredores ativos" },
                 { number: "3", label: "Anos de história" },
-                { number: "52", label: "Treinos por ano" },
+                { number: "+52", label: "Treinos por ano" },
                 { number: "∞", label: "Amizades criadas" },
               ].map((stat, i) => (
                 <div

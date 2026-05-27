@@ -2,22 +2,26 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Ana Silva",
-    text: "Minha vida mudou depois da Arraias. Comecei caminhando e hoje corro 10km com um sorriso no rosto!",
-    role: "Corredora há 1 ano",
+    name: "Renizio Negreiros",
+    text: "Minha vida mudou depois da Arraias. Comecei a correr, parei e comecei de novo, e hoje corro com um sorriso no rosto!",
+    role: "Corredor há 7 anos",
+    image: "/images/renizio.png",
   },
   {
-    name: "Carlos Mendes",
+    name: "Emerson Lima",
     text: "A energia do grupo é surreal. Você acorda às 5h da manhã animado porque sabe que vai encontrar os amigos.",
-    role: "Maratonista",
+    role: "Meio Maratonista",
+    image: "/images/emerson.png",
   },
   {
-    name: "Juliana Costa",
+    name: "Sara Barros",
     text: "Sempre achei que corrida não era para mim. A comunidade me abraçou e me mostrou que todos podem.",
-    role: "Iniciante",
+    role: "Corredora há 2 anos",
+    image: "/images/sara.png",
   },
 ];
 
@@ -59,12 +63,23 @@ export function Community() {
                 &ldquo;{t.text}&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-brand-neon/20 flex items-center justify-center text-brand-neon font-bold text-sm">
-                  {t.name.split(" ").map(n => n[0]).join("")}
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10 bg-brand-neon/10 flex-shrink-0 flex items-center justify-center">
+                  {t.image ? (
+                    <Image
+                      src={t.image}
+                      alt={t.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <span className="text-brand-neon font-bold text-sm">
+                      {t.name.split(" ").map(n => n[0]).join("")}
+                    </span>
+                  )}
                 </div>
                 <div>
-                  <p className="font-bold text-white">{t.name}</p>
-                  <p className="text-brand-neon text-sm">{t.role}</p>
+                  <p className="font-bold text-white leading-snug">{t.name}</p>
+                  <p className="text-brand-neon text-sm leading-snug">{t.role}</p>
                 </div>
               </div>
             </motion.div>

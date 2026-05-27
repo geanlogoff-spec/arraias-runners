@@ -53,6 +53,7 @@ OU
 
 7. Estrutura obrigatória:
 - frase motivacional estilo Arraias Runners
+- Aviso de responsabilidade médica, como fazer exames antes de iniciar uma vida de corrida.
 - Resumo do Perfil Identificado
 - Aquecimento Sugerido
 - O Treino (Semana 1)

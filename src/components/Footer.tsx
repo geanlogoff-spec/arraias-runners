@@ -1,5 +1,22 @@
-import { Phone } from "lucide-react";
 import Image from "next/image";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 const links = [
   { label: "Sobre Nós", href: "/sobre" },
@@ -23,13 +40,13 @@ export function Footer() {
           />
 
           <a
-            href="https://wa.me/5568999999999"
+            href="https://www.instagram.com/arraiasrunners/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-brand-dark-gray/50 px-6 py-3 rounded-full border border-white/10 hover:border-brand-neon/30 transition-colors"
           >
-            <Phone className="w-5 h-5 text-brand-neon" />
-            <span className="text-white font-medium">Fale conosco pelo WhatsApp</span>
+            <InstagramIcon className="w-5 h-5 text-brand-neon" />
+            <span className="text-white font-medium">Siga-nos no Instagram</span>
           </a>
         </div>
 
