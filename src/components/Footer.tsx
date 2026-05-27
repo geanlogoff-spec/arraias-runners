@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -43,6 +46,7 @@ export function Footer() {
             href="https://www.instagram.com/arraiasrunners/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("instagram_follow_click", "engagement", "Footer Button")}
             className="flex items-center gap-3 bg-brand-dark-gray/50 px-6 py-3 rounded-full border border-white/10 hover:border-brand-neon/30 transition-colors"
           >
             <InstagramIcon className="w-5 h-5 text-brand-neon" />

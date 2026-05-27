@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Users, Calendar, Camera, Send, MessageSquare, Zap } from "lucide-react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -205,6 +206,7 @@ export function CTA() {
                     href={instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("instagram_follow_click", "engagement", "CTA Profile Card")}
                     className="flex-1 bg-brand-neon hover:bg-brand-neon-light text-brand-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(57,255,20,0.25)] text-sm"
                   >
                     <InstagramIcon className="w-4 h-4" />
@@ -214,6 +216,7 @@ export function CTA() {
                     href={`${instagramUrl}direct/inbox/`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("instagram_direct_click", "engagement", "CTA Profile Card")}
                     className="flex-1 bg-brand-black hover:bg-brand-black/80 border border-white/15 hover:border-brand-neon/30 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] text-sm"
                   >
                     <MessageSquare className="w-4 h-4 text-brand-neon" />

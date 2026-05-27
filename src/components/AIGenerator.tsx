@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, Sparkles, X, Copy, MessageCircle, CheckCircle2 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -36,6 +37,9 @@ export function AIGenerator() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!prompt.trim()) return;
+
+    // Track custom GA4 event
+    trackEvent("generate_workout", "engagement", prompt.slice(0, 100));
 
     setLoading(true);
     setError("");
