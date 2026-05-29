@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import { ArrowLeft, MapPin, Calendar, Heart, Target, Users, Trophy, Footprints } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,13 +9,13 @@ import { Navbar } from "@/components/Navbar";
 
 const timeline = [
   {
-    year: "2024",
+    year: "2025",
     title: "O primeiro passo",
     description: "Tudo começou com um pequeno grupo de amigos que se reuniu para uma corrida no final de semana em Rodrigues Alves.",
     icon: Footprints,
   },
   {
-    year: "2024",
+    year: "2025",
     title: "A comunidade cresceu",
     description: "O grupo ganhou nome, identidade e começou a atrair novos corredores de todas as idades e níveis.",
     icon: Users,
@@ -50,6 +51,57 @@ const values = [
     icon: Users,
   },
 ];
+
+function AnimatedCounter({ value, prefix = "", suffix = "" }: { value: number; prefix?: string; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, value, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate: (latest) => setCount(Math.floor(latest)),
+      });
+      return () => controls.stop();
+    }
+  }, [value, isInView]);
+
+  return (
+    <span ref={ref}>
+      {prefix}
+      {count}
+      {suffix}
+    </span>
+  );
+}
+
+function StatCard({ number, label }: { number: string; label: string }) {
+  const numericMatch = number.match(/^([+-]?)\s*(\d+)\s*(.*)$/);
+
+  if (!numericMatch) {
+    return (
+      <div className="bg-brand-black rounded-2xl border border-white/10 p-6 text-center hover:border-brand-neon/30 transition-colors">
+        <p className="text-3xl md:text-4xl font-extrabold text-brand-neon mb-2">{number}</p>
+        <p className="text-brand-gray text-sm">{label}</p>
+      </div>
+    );
+  }
+
+  const prefix = numericMatch[1] || "";
+  const numValue = parseInt(numericMatch[2], 10);
+  const suffix = numericMatch[3] || "";
+
+  return (
+    <div className="bg-brand-black rounded-2xl border border-white/10 p-6 text-center hover:border-brand-neon/30 transition-colors">
+      <p className="text-3xl md:text-4xl font-extrabold text-brand-neon mb-2">
+        <AnimatedCounter value={numValue} prefix={prefix} suffix={suffix} />
+      </p>
+      <p className="text-brand-gray text-sm">{label}</p>
+    </div>
+  );
+}
 
 export default function SobrePage() {
   return (
@@ -135,13 +187,7 @@ export default function SobrePage() {
                 { number: "+52", label: "Treinos por ano" },
                 { number: "∞", label: "Amizades criadas" },
               ].map((stat, i) => (
-                <div
-                  key={i}
-                  className="bg-brand-black rounded-2xl border border-white/10 p-6 text-center hover:border-brand-neon/30 transition-colors"
-                >
-                  <p className="text-3xl md:text-4xl font-extrabold text-brand-neon mb-2">{stat.number}</p>
-                  <p className="text-brand-gray text-sm">{stat.label}</p>
-                </div>
+                <StatCard key={i} number={stat.number} label={stat.label} />
               ))}
             </motion.div>
           </div>
