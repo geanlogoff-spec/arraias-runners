@@ -183,7 +183,7 @@ export default function SobrePage() {
             >
               {[
                 { number: "+100", label: "Corredores ativos" },
-                { number: "3", label: "Anos de história" },
+                { number: "2", label: "Anos de história" },
                 { number: "+52", label: "Treinos por ano" },
                 { number: "∞", label: "Amizades criadas" },
               ].map((stat, i) => (
